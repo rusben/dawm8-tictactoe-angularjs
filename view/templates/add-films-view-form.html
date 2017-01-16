@@ -1,0 +1,55 @@
+<h2>Add films</h2>
+<!-- film name, film director, price, available (checkbox) -->
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Film name</th>
+      <th>Film director</th>
+      <th>Price</th>
+      <th>Available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="film in VideoClubCtrl.films">
+      <td>
+        <div class="form-group" ng-class="{'has-error': !VideoClubCtrl.validFilmName($index)}">
+          <!-- <label for="filmName{{$index}}">Name</label><br/> -->
+          <input ng-model="film.name" id="filmName{{$index}}" type="text" class="form-control" placeholder="Film name" />
+           <!-- <div ng-show="!VideoClubCtrl.validFilmName($index)" class="has-error">
+            <span class="help-block ">Please, enter a film name.</span>
+          </div> -->
+        </div>
+      </td>
+      <td>
+        <div class="form-group" ng-class="{'has-error': !VideoClubCtrl.validFilmDirector($index)}">
+          <!-- <label for="filmDirector{{$index}}">Director</label><br/> -->
+          <input ng-model="film.director" id="filmDirector{{$index}}" type="text" class="form-control" placeholder="Film director" />
+          <!-- <div ng-show="!VideoClubCtrl.validFilmDirector($index)" class="has-error">
+            <span class="help-block ">Please, enter a film director.</span>
+          </div> -->
+        </div>
+      </td>
+      <td>
+        <div class="form-group" ng-class="{'has-error': !VideoClubCtrl.validFilmPrice($index)}">
+          <!-- <label for="filmPrice{{$index}}">Price</label><br/> -->
+          <input ng-model="film.price" id="filmName{{$index}}" type="number" min="0" class="form-control" placeholder="Film price" />
+           <!-- <div ng-show="!VideoClubCtrl.validFilmPrice($index)" class="has-error">
+            <span class="help-block ">Please, enter a valid number greater than 0.</span>
+          </div> -->
+        </div>
+      </td>
+      <td>
+        <div class="checkbox text-center">
+         <label>
+           <input ng-model="film.available" id="available{{$index}}" type="checkbox" />
+         </label>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="add-films-buttons" class="pull-right">
+  <button class="btn btn-default" ng-click="action='init'">Back</button>
+  <button class="btn btn-primary" ng-click="VideoClubCtrl.popupResult()">Add films</button>
+</div>

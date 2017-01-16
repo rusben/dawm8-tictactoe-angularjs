@@ -1,0 +1,14 @@
+<div class="row">
+    <h1>Result:</h1>
+    <div ng-repeat="film in PopUpCtrl.films">
+    	id: {{film.getId()}}<br/>
+    	idFilmType: {{film.getIdFilmType()}}<br/>
+    	name: {{film.getName()}}<br/>
+    	director: {{film.getDirector()}}<br/>
+    	price: {{film.getPrice()}}<br/>
+    	available: {{film.getAvailable()}}<br/>
+    	<br/>
+    </div>
+    <button class="btn btn-default pull-right" ng-click="PopUpCtrl.close()">Close</button>
+</div>
+
