@@ -8,3 +8,5 @@ body {
   text-align: center;
 }
 
+.board-cell{ height: 60px; text-align: center; font-size: 30px;   cursor: pointer; }
+

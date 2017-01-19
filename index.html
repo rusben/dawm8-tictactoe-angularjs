@@ -43,55 +43,21 @@
 
 	<div class="jumbotron">
 		<div class="container">
-			<h1>VideoClub <img src="images/logo.jpg" class="img-responsive img-circle pull-right col-md-4"/></h1>
-			<h2>The universe of movies.</h2>
-			
+			<h1>TicTacToe</h1>
+			<h2>Beat yourself with this awesome implementation of the classic game.</h2>
 		</div>
 	</div>
 
     <div class="container" >
-
 		<table class="table table-bordered">
 			<tr ng-repeat="row in TicTacToeCtrl.board track by $index">
-				<td ng-repeat="cell in row track by $index" ng-click="TicTacToeCtrl.move($parent.$index, $index)">{{cell}}</td>
+				<td class="col-md-3 board-cell" ng-repeat="cell in row track by $index" ng-click="TicTacToeCtrl.move($parent.$index, $index)">{{cell}}</td>
 			</tr>
 		</table>
-
-		
-
-
-
-		<div ng-show="action==='init'">
-			<!-- No more hardcode! -->
-			<!-- <select id="filmType" ng-model="VideoClubCtrl.filmType" class="form-control">
-					<option ng-repeat="filmType in filmTypes" value="{{filmType.getId()}}">{{filmType.getName()}}</option>
-			</select> -->
-
-			<!-- Inside ng-model we have now the object and all its data -->
-			<div class="form-group">
-				<label for="film-type">Film type</label>
-				<select id="film-type" class="form-control" ng-options="filmType.getName() for filmType in VideoClubCtrl.filmTypes" ng-model="VideoClubCtrl.filmType"></select>
-			</div>
-			<pre>{{ VideoClubCtrl.filmType }}</pre>
-
-			<div class="form-group" ng-class="{'has-error': !VideoClubCtrl.validNFilms()}">
-			    <label for="n-films">Number of films</label>
-			    <input id="n-films" ng-model="VideoClubCtrl.nFilms" class="form-control" type="number" min="1"/>
-			    <div ng-show="!VideoClubCtrl.validNFilms()" class="has-error">
-			    <span class="help-block ">Please, enter a valid integer greater or equal to 1.</span>
-			    </div>
-			</div>
-			<pre>{{ VideoClubCtrl.nFilms }}</pre>
-		
-			<button class="btn btn-primary pull-right" ng-click="VideoClubCtrl.addFilmsForm()">Add films</button>
-		</div>
-		<br/>
-		<div ng-show="action==='add-films'">
-			<add-films-view-form></add-films-view-form>
-		</div>
+		<button class="pull-right" ng-click="TicTacToeCtrl.initialize()">Restart</button>
 
 		<footer>
-			<br/><p>© 2016 DAW-M06, Institut Provençana.</p>
+			<br/><p>© 2017 DAW-M06, Institut Provençana.</p>
 		</footer>
     </div>
 
